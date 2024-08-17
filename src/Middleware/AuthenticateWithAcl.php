@@ -38,7 +38,7 @@ class AuthenticateWithAcl
         }
 
         // If no guards were successful, determine the login route dynamically
-        $loginRoute = config("auth.guards.$defaultGuard.login_route", 'login');
+        $loginRoute = config("acl.login_route", 'login');
         return redirect()->guest(route($loginRoute));
     }
 
