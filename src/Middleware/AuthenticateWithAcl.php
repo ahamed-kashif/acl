@@ -37,9 +37,7 @@ class AuthenticateWithAcl
             }
         }
 
-        // If no guards were successful, determine the login route dynamically
-        $loginRoute = config("acl.login_route", 'login');
-        return redirect()->guest(route($loginRoute));
+        return new Response('Unauthorized Access', 403);
     }
 
 }
