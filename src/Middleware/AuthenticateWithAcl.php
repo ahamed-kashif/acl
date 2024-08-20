@@ -29,14 +29,14 @@ class AuthenticateWithAcl
                 $user = $this->auth->guard($guard)->user();
                 // Check for permissions
                 if (!PermissionCheckService::canAccess(Route::currentRouteAction(), $user)) {
-                    return response()->view('errors.403', [], 403);
+                    abort( 403,'Access denied');
                 }
 
                 return $next($request);
             }
         }
 
-        return response()->view('errors.403', [], 403);
+        abort( 403,'Access denied');
     }
 
 }
