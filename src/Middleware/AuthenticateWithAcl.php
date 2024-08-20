@@ -27,17 +27,16 @@ class AuthenticateWithAcl
         foreach ($guards as $guard) {
             if ($this->auth->guard($guard)->check()) {
                 $user = $this->auth->guard($guard)->user();
-
                 // Check for permissions
                 if (!PermissionCheckService::canAccess(Route::currentRouteAction(), $user)) {
-                    return new Response('Forbidden', 403);
+                    return response()->view('errors.403', [], 403);
                 }
 
                 return $next($request);
             }
         }
 
-        return new Response('Unauthorized Access', 403);
+        return response()->view('errors.403', [], 403);
     }
 
 }
