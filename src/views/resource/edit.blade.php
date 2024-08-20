@@ -29,7 +29,7 @@
                       action="{{ url('/resource/update',['id' => $id]) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-4">
                         <label class="col-md-2 control-label">Name</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="name"
@@ -38,7 +38,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-4">
                         <label class="col-md-2 control-label">Controller</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="controller"
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-4">
                         <label class="col-md-2 control-label">Action</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="action"
@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <div class="form-group row mb-4">
                         <div class="col-md-10 offset-md-2">
                             <button type="submit" class="btn btn-primary">
                                 Update
